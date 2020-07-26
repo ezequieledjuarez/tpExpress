@@ -2,6 +2,7 @@ const db = require('../data/db')
 
 module.exports = marcasController = {
     index: function(req, res) {
+        res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' })
         let completo = []
         db.forEach(concesionaria => {
             concesionaria.autos.forEach(auto => {
@@ -12,7 +13,7 @@ module.exports = marcasController = {
         arrayFiltrado.forEach(marca => {
             res.write(marca + '\n')
         })
-        res.end()
+        res.end('\n Tenemos a tu disposición ' + arrayFiltrado.length + 'marcas para que puedas elegir ')
     },
     marca: function(req, res) {
         let marcaId = req.params.id

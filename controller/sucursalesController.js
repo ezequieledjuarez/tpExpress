@@ -15,6 +15,7 @@ module.exports = concesionariaController = {
         let sucId = req.params.id
         db.forEach(concesionaria => {
             if (concesionaria.sucursal.toLowerCase() == sucId.toLowerCase()) {
+                res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' })
                 res.write(concesionaria.sucursal + '\n')
                 res.write(concesionaria.direccion + '\n')
                 res.write(concesionaria.telefono + '\n\n')

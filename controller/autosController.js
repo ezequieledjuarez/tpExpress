@@ -10,5 +10,6 @@ module.exports = autosControllers = {
             })
         })
         res.end()
-    }
+    },
+
 }

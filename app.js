@@ -16,6 +16,7 @@ app.listen(3030, () => console.log('Server running in 3030 port'));
 
 app.use('/', homeRoutes)
 app.use('/sucursales', sucursalesRoutes)
+app.use('/marcas', marcasRoutes)
 app.use('/autos', autosRoutes)
 
 //Ruta que redirecciona si no se encuentra la ruta buscada
